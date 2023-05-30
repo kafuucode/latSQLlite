@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="statuses">
+        <item>Belum Datang</item>
+        <item>Datang</item>
+        <item>Berhalangan Hadir</item>
+    </string-array>
+</resources>
