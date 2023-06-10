@@ -24,6 +24,7 @@ public class GuestDataSource {
         dbHelper.close();
     }
 
+    //add guest but dont empty the name
     public void addGuest(GuestModel guest) {
         ContentValues values = new ContentValues();
         values.put("name", guest.getName());
@@ -47,10 +48,9 @@ public class GuestDataSource {
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            int id = cursor.getInt(cursor.getColumnIndex("id"));
-            String name = cursor.getString(cursor.getColumnIndex("name"));
-            int status = cursor.getInt(cursor.getColumnIndex("status"));
-
+            int id = cursor.getInt(0);
+            String name = cursor.getString(1);
+            int status = cursor.getInt(2);
             GuestModel guest = new GuestModel(id, name, status);
             guests.add(guest);
 

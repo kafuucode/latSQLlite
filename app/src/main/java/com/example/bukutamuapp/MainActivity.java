@@ -42,7 +42,13 @@ public class MainActivity extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+              //edit text name tak boleh kosong
                 String name = editTextName.getText().toString();
+                if (name.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Nama tamu tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 int status = spinnerStatus.getSelectedItemPosition();
 
                 GuestModel guest = new GuestModel();
